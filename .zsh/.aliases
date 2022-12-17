@@ -1,0 +1,17 @@
+alias dotfiles="cd $HOME/.dotfiles"
+alias cfgzsh="nvim $HOME/.dotfiles/.zshrc"
+alias cfgomz="nvim $HOME/.dotfiles/.oh-my-zsh"
+alias cfgrld="source $HOME/.dotfiles/.zshrc"
+alias home="cd $HOME"
+alias docs="cd $HOME/Documents"
+alias data="cd $HOME/Documents/projects"
+alias qflow="cd $HOME/Documents/work/softpoint/qflow"
+# Nvim env aliases
+alias ruvim="XDG_CONFIG_HOME=$HOME/.dotfiles/config/rubyvim nvim"
+alias pyvim="XDG_CONFIG_HOME=$HOME/.dotfiles/config/pythonvim nvim"
+# Rails aliases
+alias rspec-all='bundle exec rspec'
+alias rspec-general='bundle exec rspec --exclude-pattern "spec/_general/**/*_spec.rb"'
+alias refresh-db='bundle exec rake db:drop db:create db:migrate db:schema:dump RAILS_ENV=test'
+alias refresh-dumps='sh cypress/db/scripts/refresh_dumps.sh'
+alias switch-design='rm -rf tmp/cache; redis-cli flushall; bundle install; yarn cache clean; rm -rf node_modules; yarn install; rails webpacker:compile'

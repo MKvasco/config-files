@@ -1,3 +1,4 @@
+
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
@@ -73,16 +74,14 @@ set wildmode=list:longest
 
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
-set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx"}}}
 
 " PLUGINS ---------------------------------------------------------------- {{{
 
-call plug#begin('~/.vim/plugged')
-
-  Plug 'dense-analysis/ale'
-
-  Plug 'preservim/nerdtree'
-
+call plug#begin("~/.dotfiles/config/nvim/plugged")
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " }}}
