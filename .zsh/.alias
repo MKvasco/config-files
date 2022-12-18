@@ -1,7 +1,5 @@
 alias dotfiles="cd $HOME/.dotfiles"
-alias cfgzsh="nvim $HOME/.dotfiles/.zshrc"
-alias cfgomz="nvim $HOME/.dotfiles/.oh-my-zsh"
-alias cfgrld="source $HOME/.dotfiles/.zshrc"
+alias rld="source $HOME/.zshrc"
 alias home="cd $HOME"
 alias docs="cd $HOME/Documents"
 alias data="cd $HOME/Documents/projects"
