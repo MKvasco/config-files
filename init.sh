@@ -6,41 +6,41 @@ cleanup () {
   source $HOME/.dotfiles/scripts/cleanup.sh &
   wait
 }
+# Log function
+log () {
+  echo $1; sleep 1
+}
+
 
 # Brew installation
-echo "Begin brew formulae installation!"
-sleep 1
+log "Begin brew formulae installation!"
 source $HOME/.dotfiles/scripts/install.sh &
-wait
-echo "Brew installaction completed!"
-sleep 1
+log "Brew installaction completed!" 
 
 # Oh-my-zsh installation
-echo "Begin oh-my-zsh installation!"
-sleep 1
+log "Begin oh-my-zsh installation!"
 cleanup
-rm -r $HOME/.dotfiles/.oh-my-zsh
 rm $HOME/.dotfiles/install.sh
+rm -r $HOME/.oh-my-zsh
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-ZSH="$HOME/.dotfiles/.oh-my-zsh" sh install.sh &
+ZSH="$HOME/.oh-my-zsh" sh install.sh &
 wait
-rm $HOME/.dotfiles/.oh-my-zsh/themes/gnzh.zsh-theme 
-cp $HOME/.dotfiles/custom-themes/oh-my-zsh/gnzh.zsh-theme $HOME/.dotfiles/.oh-my-zsh/themes/gnzh.zsh-theme
+rm $HOME/.oh-my-zsh/themes/gnzh.zsh-theme 
+cp $HOME/.dotfiles/custom/themes/gnzh.zsh-theme $HOME/.oh-my-zsh/themes/gnzh.zsh-theme
 rm $HOME/.dotfiles/install.sh
-echo "Oh-my_zsh installation completed!"
-sleep 1
+log "Oh-my_zsh installation completed!"
+
+# Oh-my-zsh custom plugins installation
+git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 # Create symlinks for dotfiles
-echo "Creating symlinks!"
-sleep 1 
+log "Creating symlinks!"
 cleanup
-ln -s $HOME/.dotfiles/.zsh/.zshrc $HOME/.zshrc
-echo "All symlink successfully created!"
-sleep 1
+ln -s $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
+log "All symlink successfully created!"
 
 # Zsh configs
-echo "Applying zsh configs!"
-sleep 1
+log "Applying zsh configs!"
 source $HOME/.zshrc
-echo "Zsh configs applied!"
-sleep 1
+log "Zsh configs applied!"

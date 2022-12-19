@@ -4,9 +4,7 @@ alias home="cd $HOME"
 alias docs="cd $HOME/Documents"
 alias data="cd $HOME/Documents/projects"
 alias qflow="cd $HOME/Documents/work/softpoint/qflow"
-# Nvim env aliases
-alias ruvim="XDG_CONFIG_HOME=$HOME/.dotfiles/config/rubyvim nvim"
-alias pyvim="XDG_CONFIG_HOME=$HOME/.dotfiles/config/pythonvim nvim"
+alias nvim="XDG_CONFIG_HOME=$HOME/.dotfiles/ nvim"
 # Rails aliases
 alias rspec-all='bundle exec rspec'
 alias rspec-general='bundle exec rspec --exclude-pattern "spec/_general/**/*_spec.rb"'
