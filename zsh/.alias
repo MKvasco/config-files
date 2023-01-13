@@ -5,6 +5,9 @@ alias docs="cd $HOME/Documents"
 alias data="cd $HOME/Documents/projects"
 alias qflow="cd $HOME/Documents/work/softpoint/qflow"
 alias nvim="XDG_CONFIG_HOME=$HOME/.dotfiles/ nvim"
+alias load-zsh='source ~/.zshrc'
+# Python envs
+alias django-env='source ~/.venvs/django_dev/bin/activate'
 # Rails aliases
 alias rspec-all='bundle exec rspec'
 alias rspec-general='bundle exec rspec --exclude-pattern "spec/_general/**/*_spec.rb"'
