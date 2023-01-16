@@ -4,13 +4,13 @@ alias home="cd $HOME"
 alias docs="cd $HOME/Documents"
 alias data="cd $HOME/Documents/projects"
 alias qflow="cd $HOME/Documents/work/softpoint/qflow"
+alias bazano="cd $HOME/Documents/projects/bazano"
 alias nvim="XDG_CONFIG_HOME=$HOME/.dotfiles/ nvim"
-alias load-zsh='source ~/.zshrc'
 # Python envs
-alias django-env='source ~/.venvs/django_dev/bin/activate'
+alias django-env='source $HOME/.venvs/django_dev/bin/activate'
 # Rails aliases
 alias rspec-all='bundle exec rspec'
 alias rspec-general='bundle exec rspec --exclude-pattern "spec/_general/**/*_spec.rb"'
 alias refresh-db='bundle exec rake db:drop db:create db:migrate db:schema:dump RAILS_ENV=test'
 alias refresh-dumps='sh cypress/db/scripts/refresh_dumps.sh'
-alias switch-design='rm -rf tmp/cache; redis-cli flushall; bundle install; yarn cache clean; rm -rf node_modules; yarn install; rails webpacker:compile'
+alias switch-design='rm -rf tmp/cache;rm -rf public/packs;rm -rf node_modules;redis-cli flushall;bundle install;yarn cache clean;yarn install;rails webpacker:compile'
