@@ -38,6 +38,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-
 log "Creating symlinks!"
 cleanup
 ln -s $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
+# Create symlink for ideavim
+ln -s $HOME/.dotfiles/nvim/ideavim.vim $HOME/.ideavimrc
 log "All symlink successfully created!"
 
 # Zsh configs

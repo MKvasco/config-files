@@ -33,20 +33,6 @@ set splitbelow
 " Use system clipboard
 set clipboard+=unnamedplus
 
-" Plugins
-call plug#begin("~/.dotfiles/nvim/plugged")
-" One Dark Theme
-Plug 'navarasu/onedark.nvim'
-" Lualine status bar
-Plug 'nvim-lualine/lualine.nvim'
-" Search engine
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-" Side menu tree
-Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
-Plug 'nvim-tree/nvim-tree.lua'
-call plug#end()
-
 " Mappings
 let mapleader = '`'
 
@@ -81,21 +67,3 @@ noremap <S-up> <c-w>+
 noremap <S-down> <c-w>-
 noremap <S-left> <c-w>>
 noremap <S-right> <c-w><
-
-" Telescope fuzzy finder mappings:
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
-" VimTree written in Lua mappings:
-nnoremap <C-t> :NvimTreeToggle<CR>
-
-" Scripts
-
-" Theme config
-:luafile ~/.dotfiles/nvim/lua/onedark_init.lua
-" Lualine plugin config
-:luafile ~/.dotfiles/nvim/lua/lualine_init.lua
-" VimTree Lua config
-:luafile ~/.dotfiles/nvim/lua/vimtree_init.lua
