@@ -32,6 +32,8 @@ set splitright
 set splitbelow
 " Use system clipboard
 set clipboard+=unnamedplus
+" Set minimum lines above and below cursos on screen
+set scrolloff=20
 
 " Mappings
 let mapleader = '`'
